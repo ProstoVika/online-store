@@ -78,13 +78,13 @@ export class Cart {
                 const goToShoppingContainer = document.createElement('div');
                 goToShoppingContainer.classList.add('go-to-shopping-container');
 
-                const goToShoppingButton = document.createElement('button');
-                goToShoppingButton.textContent = 'CONTINUE SHOPPING...';
-                goToShoppingButton.classList.add('go-to-shopping-btn');
-                goToShoppingButton.addEventListener('click', () => {
-                    window.location.href = 'http://localhost:63342/index.html';
-                });
-                goToShoppingContainer.appendChild(goToShoppingButton);
+                // const goToShoppingButton = document.createElement('button');
+                // goToShoppingButton.textContent = 'CONTINUE SHOPPING...';
+                // goToShoppingButton.classList.add('go-to-shopping-btn');
+                // goToShoppingButton.addEventListener('click', () => {
+                //     window.location.href = 'http://localhost:63342/index.html';
+                // });
+                // goToShoppingContainer.appendChild(goToShoppingButton);
                 this.cartContainer.appendChild(goToShoppingContainer);
 
             } else {
