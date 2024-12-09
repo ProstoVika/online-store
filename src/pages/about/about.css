@@ -12,6 +12,7 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 14px;
+  background-color: #f9f9f9;
 }
 * body .header {
   margin: 0 auto;
@@ -289,57 +290,55 @@
   font-size: 2em;
   margin: 0;
 }
-* body .article {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+* body .stores {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
-* body .article .img-container {
+* body .stores .img-container {
   position: relative;
+  width: 60%;
   padding-bottom: 36.25%;
-  margin: 0 20px;
   overflow: hidden;
+  margin: 20px auto;
 }
-* body .article .img-container iframe {
+* body .stores iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   border: 0;
-  filter: grayscale(100%);
+  filter: grayscale(70%);
 }
-* body .page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 60vh;
-}
-* body .page-wrapper .stores {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 0;
-}
-* body .page-wrapper .stores .store-address {
-  width: calc(50% - 20px);
+* body .stores .store-info {
+  width: 35%;
   padding: 20px;
   box-sizing: border-box;
 }
-* body .page-wrapper .stores .store-address .topic {
+* body .stores .store-info .store-address {
+  width: 100%;
+}
+* body .stores .store-info .topic {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
-* body .page-wrapper .stores .store-address .link {
+* body .stores .store-info .link {
   display: block;
   margin-top: 10px;
   color: #110d0d;
 }
-* body .page-wrapper .stores .store-address .link:hover {
+* body .stores .store-info .link:hover {
   color: #811010;
 }
-* body .page-wrapper .stores .store-address .opening-hours {
+* body .stores .store-info .opening-hours {
   margin-top: 10px;
+}
+* body .stores .store-info .opening-hours span {
+  display: block;
+  margin-bottom: 5px;
 }
 * body footer {
   background-color: rgba(0, 0, 0, 0.9);
