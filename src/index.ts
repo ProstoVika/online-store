@@ -1,7 +1,7 @@
 import './styles.css'
-import {ProductList} from "./lego/product";
+import {ProductList, productDOM} from "./lego/product";
 import {Filter} from "./lego/filter";
-
+import {Cart} from "./lego/cart";
 
 
 export class MainController {
@@ -10,10 +10,9 @@ export class MainController {
     private readonly productDOM: Element;
     private readonly line: HTMLElement;
 
-
-    constructor() {
+    constructor(productDOM: Element, cart: Cart) {
         this.productDOM = document.querySelector(".products-container")!;
-        this.productList = new ProductList(this.productDOM);
+        this.productList = new ProductList(this.productDOM, cart);
         this.filter = new Filter(this.productList);
         this.line = document.getElementById('line')!;
 
@@ -35,6 +34,6 @@ export class MainController {
     }
 }
 
-
-export const mainController = new MainController();
+export const cart = new Cart();
+export const mainController = new MainController(productDOM, cart);
 

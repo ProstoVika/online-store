@@ -1,14 +1,14 @@
 import {ProductInterface} from "../inter/interfaces";
-
+import {Cart} from "./cart";
 
 export const productDOM = document.querySelector(".products-container") as Element;
 
 export class ProductList {
     private readonly productDOM: Element;
-
-    constructor(productDOM: Element) {
+    private cart : Cart;
+    constructor(productDOM: Element, cart: Cart) {
         this.productDOM = productDOM;
-
+        this.cart = cart;
     }
 
     public getProducts(): ProductInterface[] {
@@ -48,7 +48,7 @@ export class ProductList {
                 const button: HTMLButtonElement = element.querySelector('.bag-btn') as HTMLButtonElement;
                 button.addEventListener('click', (event: Event): void => {
                     event.preventDefault();
-
+                    this.cart.addItem(product);
                 });
 
                 if (productDOM) {
@@ -62,8 +62,8 @@ export class ProductList {
 export class NewProduct{
     productList: ProductList;
     constructor(productDOM: Element) {
-
-        this.productList = new ProductList(productDOM);
+        const cart = new Cart();
+        this.productList = new ProductList(productDOM, cart);
     }
 }
 export const newProduct = new NewProduct(productDOM);

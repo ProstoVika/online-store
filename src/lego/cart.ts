@@ -65,7 +65,8 @@ export class Cart {
     }
 
     public displayCartItems(): void {
-        const cartCountInfo = document.getElementById('cart-count-info');
+
+             const cartCountInfo = document.getElementById('cart-count-info');
         if (cartCountInfo !== null && this.cartContainer) {
             this.cartContainer.innerHTML = '';
             if (this.items.length === 0) {
@@ -77,13 +78,13 @@ export class Cart {
                 const goToShoppingContainer = document.createElement('div');
                 goToShoppingContainer.classList.add('go-to-shopping-container');
 
-                // const goToShoppingButton = document.createElement('button');
-                // goToShoppingButton.textContent = 'CONTINUE SHOPPING...';
-                // goToShoppingButton.classList.add('go-to-shopping-btn');
-                // goToShoppingButton.addEventListener('click', () => {
-                //     window.location.href = 'http://localhost:63342/index.html';
-                // });
-                // goToShoppingContainer.appendChild(goToShoppingButton);
+                const goToShoppingButton = document.createElement('button');
+                goToShoppingButton.textContent = 'CONTINUE SHOPPING...';
+                goToShoppingButton.classList.add('go-to-shopping-btn');
+                goToShoppingButton.addEventListener('click', () => {
+                    window.location.href = 'http://localhost:63342/index.html';
+                });
+                goToShoppingContainer.appendChild(goToShoppingButton);
                 this.cartContainer.appendChild(goToShoppingContainer);
 
             } else {
@@ -93,7 +94,7 @@ export class Cart {
                     cartElement.id = `item-${item.id}`;
                     cartElement.classList.add('item');
                     cartElement.innerHTML = `
-                         <img src="${window.origin + '/' + item.product.image}" alt="product image">
+                         <img src="${window.origin + '/' +  item.product.image}" alt="product image">
                         <div class="cart-item-info">
                             <h3 class="cart-item-name">${item.product.title}</h3>
                             <span class="company-btn">${item.product.company}</span>

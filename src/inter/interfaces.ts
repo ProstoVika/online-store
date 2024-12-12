@@ -6,10 +6,20 @@ export interface ProductInterface{
     price: number;
 }
 
+export interface CartItemsInterface{
+    id: number;
+    product: ProductInterface;
+    quantity: number;
+}
 
-
-
-
+export class CartItemsClass implements CartItemsInterface{
+    constructor(
+        public id: number,
+        public product: ProductInterface,
+        public quantity: number
+    ) {
+    }
+}
 
 
 
